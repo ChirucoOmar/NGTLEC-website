@@ -1,24 +1,33 @@
-body {
+/* =====================================================
+   RESET & BASE
+===================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
   background: linear-gradient(180deg, #7b6cf6, #c2b9ff);
 }
-html, body { overflow-x: hidden; }
 
-/* HEADER AGORA DENTRO DO BANNER */
+/* =====================================================
+   HEADER / MENU (DENTRO DO BANNER)
+===================================================== */
 .header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 15px 30px;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(6px);
-  z-index: 1000;
-  gap: 20px;
 }
 
 .nav a {
@@ -28,57 +37,166 @@ html, body { overflow-x: hidden; }
   font-weight: 500;
 }
 
-.menu-icon { display: none; cursor: pointer; }
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: #5a4fcf;
+  font-size: 32px;
+}
 
-.slider { position: relative; }
+/* =====================================================
+   SLIDER / BANNER
+===================================================== */
+.slider {
+  position: relative;
+}
 
 .slider img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: none;
 }
-.slider img.active { display: block; }
 
-/* WELCOME */
+.slider img.active {
+  display: block;
+}
+
+/* =====================================================
+   BOAS-VINDAS (TEXTO)
+===================================================== */
+.welcome-text-only {
+  background: #f7f8fc;
+  padding: 80px 20px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.welcome-text-only h1 {
+  font-size: 42px;
+  color: #4f46c8;
+  margin-bottom: 20px;
+}
+
+.welcome-text-only p {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* =====================================================
+   QUEM SOMOS
+===================================================== */
 .welcome {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 40px;
   padding: 60px;
   background: #fff;
 }
 
+.welcome img {
+  width: 100%;
+}
+
+.welcome-image {
+  position: relative;
+}
+
 .welcome-image img {
   width: 100%;
+  max-height: 380px;
+  object-fit: contain;
   display: none;
   border-radius: 15px;
 }
-.welcome-image img.active { display: block; }
 
-/* DISCIPLINAS — NÃO ENCOSTAR NAS BORDAS */
-.subjects {
-  padding: 80px 20px;
-  background: #fff;
+.welcome-image img.active {
+  display: block;
 }
 
-.subjects > h2,
-.subjects > h3,
-.subjects-grid,
-#moreBtn {
+/* =====================================================
+   O QUE OFERECEMOS
+===================================================== */
+.offerings {
+  background: #f6f5ff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.offerings h2 {
+  font-size: 36px;
+  color: #5a4fcf;
+}
+
+.offerings-subtitle {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 18px;
+  color: #444;
+}
+
+.offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+}
+
+.offering-card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.offering-card:hover {
+  transform: translateY(-8px);
+}
+
+.offering-card span {
+  font-size: 48px;
+  color: #7b6cf6;
+}
+
+.offering-card h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.offering-card p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* =====================================================
+   DISCIPLINAS
+===================================================== */
+.subjects {
+  background: #fff;
+  padding: 80px 20px;
+}
+
+.subjects h2,
+.subjects h3 {
+  text-align: center;
+  color: #4f46c8;
 }
 
 .subjects-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
 }
 
 .subject {
-  background: #ffffff;
+  background: #fff;
   padding: 25px 15px;
   border-radius: 16px;
   text-align: center;
@@ -86,81 +204,122 @@ html, body { overflow-x: hidden; }
   transition: transform 0.3s ease;
 }
 
-.subject:hover { transform: translateY(-6px); }
+.subject:hover {
+  transform: translateY(-6px);
+}
 
 .subject img {
   width: 60px;
-  margin: 0 auto 10px;
-  display: block;
+  margin-bottom: 10px;
 }
 
-.subjects h2,
-.subjects h3 { text-align: center; }
-
-.contact {
-  padding: 60px 20px;
-  background: #f2f2ff;
-  text-align: center;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #5a4fcf;
-  color: #fff;
-}
-
-/* RESPONSIVIDADE GLOBAL */
-
-@media (max-width: 1024px){
-  .offerings-grid{ grid-template-columns: repeat(2,1fr); }
-}
-
-@media (max-width: 768px) {
-
-  .menu-icon { display: block; color:#5a4fcf; font-size:32px; }
-
-  .nav {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    background:#fff;
-    display:none;
-    flex-direction: column;
-    text-align:center;
-  }
-
-  .nav.show { display:flex; }
-
-  .nav a { padding:15px; border-bottom:1px solid #eee; }
-
-  .welcome {
-    grid-template-columns: 1fr;
-    padding: 30px 20px;
-    text-align: center;
-  }
-
-  .subjects-grid { grid-template-columns: repeat(2,1fr); }
-
-  .slider img { height: 40vh; }
-}
-
-@media (max-width: 480px){
-  .subjects-grid { grid-template-columns: 1fr; }
+.subject p {
+  font-size: 15px;
+  font-weight: 500;
 }
 
 /* BOTÃO */
 #moreBtn {
-  display:block;
-  margin:40px auto;
-  padding:12px 25px;
-  background:transparent;
-  border:2px solid #4f46c8;
-  border-radius:25px;
-  cursor:pointer;
+  display: block;
+  margin: 30px auto;
+  padding: 12px 25px;
+  background: transparent;
+  border: 2px solid #4f46c8;
+  border-radius: 25px;
+  cursor: pointer;
 }
-#moreBtn:hover{
-  background:#4f46c8;
-  color:#fff;
+
+#moreBtn:hover {
+  background: #4f46c8;
+  color: #fff;
+}
+
+/* =====================================================
+   CONTACTOS
+===================================================== */
+.contact {
+  background: #f2f2ff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.whatsapp img {
+  width: 35px;
+  height: 35px;
+  margin-right: 8px;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+  background: #5a4fcf;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+@media (max-width: 900px) {
+  .welcome {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .subjects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+
+  .subjects {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .subjects-grid {
+    gap: 8px;
+  }
+
+  .subject {
+    padding: 8px;
+  }
+
+  .subject img {
+    width: 40px;
+  }
+
+  .subject p {
+    font-size: 12px;
+  }
 }
