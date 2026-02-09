@@ -1,6 +1,3 @@
-/* ============================
- SLIDER PRINCIPAL
-============================ */
 let slides = document.querySelectorAll('.slide');
 let index = 0;
 
@@ -10,16 +7,19 @@ setInterval(() => {
   slides[index].classList.add('active');
 }, 4000);
 
-/* ============================
- MENU MOBILE
-============================ */
 function toggleMenu() {
   document.getElementById('navMenu').classList.toggle('show');
 }
 
-/* ============================
- SLIDER QUEM SOMOS
-============================ */
+function showMore() {
+  document.getElementById('primary').innerHTML += `
+    <div class="subject"><img src="images/ingles.png"><p>Inglês</p></div>
+    <div class="subject"><p>Educação Moral e Cívica</p></div>
+    <div class="subject"><p>Educação Visual e Ofícios</p></div>
+  `;
+  document.getElementById('moreBtn').style.display = 'none';
+}
+
 let welcomeSlides = document.querySelectorAll('.welcome-slide');
 let welcomeIndex = 0;
 

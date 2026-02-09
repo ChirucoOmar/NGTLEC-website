@@ -1,138 +1,166 @@
-/* ===============================
- RESET BÁSICO
-=============================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+  background: linear-gradient(180deg, #7b6cf6, #c2b9ff);
 }
+html, body { overflow-x: hidden; }
 
-/* ===============================
- HEADER
-=============================== */
+/* HEADER AGORA DENTRO DO BANNER */
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 15px 30px;
-  background: #fff;
-  position: sticky;
-  top: 0;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
   z-index: 1000;
+  gap: 20px;
 }
 
 .nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #4f46c8;
+  color: #5a4fcf;
   font-weight: 500;
 }
 
-.menu-icon {
-  display: none;
-  font-size: 32px;
-  cursor: pointer;
-  color: #4f46c8;
-}
+.menu-icon { display: none; cursor: pointer; }
 
-/* ===============================
- SLIDER / BANNER
-=============================== */
-.slider {
-  position: relative;
-  width: 100%;
-}
+.slider { position: relative; }
 
 .slider img {
   width: 100%;
-  height: 60vh;
+  height: auto;
+  aspect-ratio: 16/9;
   object-fit: cover;
   display: none;
 }
+.slider img.active { display: block; }
 
-.slider img.active {
+/* WELCOME */
+.welcome {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 60px;
+  background: #fff;
+}
+
+.welcome-image img {
+  width: 100%;
+  display: none;
+  border-radius: 15px;
+}
+.welcome-image img.active { display: block; }
+
+/* DISCIPLINAS — NÃO ENCOSTAR NAS BORDAS */
+.subjects {
+  padding: 80px 20px;
+  background: #fff;
+}
+
+.subjects > h2,
+.subjects > h3,
+.subjects-grid,
+#moreBtn {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 20px;
+}
+
+.subject {
+  background: #ffffff;
+  padding: 25px 15px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.subject:hover { transform: translateY(-6px); }
+
+.subject img {
+  width: 60px;
+  margin: 0 auto 10px;
   display: block;
 }
 
-/* TEXTO SOBRE O BANNER */
-.slider-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  padding: 20px;
+.subjects h2,
+.subjects h3 { text-align: center; }
+
+.contact {
+  padding: 60px 20px;
+  background: #f2f2ff;
   text-align: center;
 }
 
-.banner-links a {
-  margin: 10px;
-  padding: 12px 25px;
-  background: #4f46c8;
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #5a4fcf;
   color: #fff;
-  text-decoration: none;
-  border-radius: 25px;
 }
 
-.banner-links a.outline {
-  background: transparent;
-  border: 2px solid #fff;
+/* RESPONSIVIDADE GLOBAL */
+
+@media (max-width: 1024px){
+  .offerings-grid{ grid-template-columns: repeat(2,1fr); }
 }
 
-/* ===============================
- RESPONSIVIDADE
-=============================== */
+@media (max-width: 768px) {
 
-/* TABLETS */
-@media (max-width: 1024px) {
-  .offerings-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* INFINIX SMART 6 E SIMILARES (≤720px) */
-@media (max-width: 720px) {
-
-  .menu-icon {
-    display: block;
-  }
+  .menu-icon { display: block; color:#5a4fcf; font-size:32px; }
 
   .nav {
     position: absolute;
-    top: 70px;
+    top: 60px;
     right: 0;
     width: 100%;
-    background: #fff;
-    display: none;
+    background:#fff;
+    display:none;
     flex-direction: column;
-    text-align: center;
+    text-align:center;
   }
 
-  .nav.show {
-    display: flex;
-  }
+  .nav.show { display:flex; }
 
-  .slider img {
-    height: 45vh;
-  }
+  .nav a { padding:15px; border-bottom:1px solid #eee; }
 
   .welcome {
     grid-template-columns: 1fr;
     padding: 30px 20px;
+    text-align: center;
   }
+
+  .subjects-grid { grid-template-columns: repeat(2,1fr); }
+
+  .slider img { height: 40vh; }
 }
 
-/* CELULARES PEQUENOS */
-@media (max-width: 480px) {
-  .banner-links a {
-    width: 100%;
-  }
+@media (max-width: 480px){
+  .subjects-grid { grid-template-columns: 1fr; }
+}
+
+/* BOTÃO */
+#moreBtn {
+  display:block;
+  margin:40px auto;
+  padding:12px 25px;
+  background:transparent;
+  border:2px solid #4f46c8;
+  border-radius:25px;
+  cursor:pointer;
+}
+#moreBtn:hover{
+  background:#4f46c8;
+  color:#fff;
 }
