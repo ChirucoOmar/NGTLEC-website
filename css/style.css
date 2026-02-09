@@ -17,33 +17,16 @@ html, body {
    HEADER / MENU (DENTRO DO BANNER)
 ===================================================== */
 /* HEADER FORA DO BANNER (NÃO EMPURRA O LAYOUT) */
-section{
-  scroll-margin-top:90px;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-:root{
-  --header-h:70px;
-}
-
 .header{
-  position:fixed;
-  top:0;
-  left:0;
+  position:relative;
   width:100%;
-  height:var(--header-h);
   display:flex;
   justify-content:flex-end;
   align-items:center;
-  padding:0 25px;
+  padding:15px 30px;
   background:#ffffff;
   border-bottom:1px solid #eee;
-  z-index:1000;
 }
-
 
 
 
@@ -64,28 +47,20 @@ html{
 /* =====================================================
    SLIDER / BANNER
 ===================================================== */
-.slider{
-  margin-top:var(--header-h);
-  position:relative;
-  width:100%;
-  height:clamp(240px,65vh,520px);
-  overflow:hidden;
+.slider {
+  position: relative;
 }
 
-.slider img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:0;
-  transition:opacity .8s ease;
+.slider img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: none;
 }
 
-.slider img.active{
-  opacity:1;
+.slider img.active {
+  display: block;
 }
-
 
 /* =====================================================
    BOAS-VINDAS (TEXTO)
@@ -294,57 +269,57 @@ footer {
   }
 }
 
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-  .menu-icon{
-    display:block;
+  .menu-icon {
+    display: block;
   }
 
-  .nav{
-    position:fixed;
-    top:var(--header-h);
-    left:0;
-    width:100%;
-    height:calc(100vh - var(--header-h));
-    background:#fff;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding-top:40px;
-    transform:translateY(-120%);
-    transition:.4s ease;
+  .nav {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    display: none;
+    flex-direction: column;
+    text-align: center;
   }
 
-  .nav.show{
-    transform:translateY(0);
+  .nav.show {
+    display: flex;
   }
 
-  .nav a{
-    padding:18px;
-    width:100%;
-    text-align:center;
-    border-bottom:1px solid #eee;
-    font-size:20px;
+  .nav a {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
   }
 
-  .subjects-grid{
-    grid-template-columns:repeat(2,1fr);
+  .subjects-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
+@media (max-width: 480px) {
 
-@media (max-width:480px){
-
-  .subjects-grid{
-    grid-template-columns:1fr 1fr;
-    gap:10px;
+  .subjects {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
-  .welcome-text-only h1{
-    font-size:28px;
+  .subjects-grid {
+    gap: 8px;
   }
 
-  .offerings h2{
-    font-size:28px;
+  .subject {
+    padding: 8px;
+  }
+
+  .subject img {
+    width: 40px;
+  }
+
+  .subject p {
+    font-size: 12px;
   }
 }
