@@ -16,19 +16,23 @@ html, body {
 /* =====================================================
    HEADER / MENU (DENTRO DO BANNER)
 ===================================================== */
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 15px 30px;
-  background: rgba(255,255,255,0.92);
+.header{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:2000;
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  padding:15px 30px;
+  background:rgba(255,255,255,0.15);
   backdrop-filter: blur(6px);
 }
+.slider{
+  position:relative;
+}
+
 
 .nav a {
   margin: 0 15px;
