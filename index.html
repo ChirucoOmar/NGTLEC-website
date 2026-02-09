@@ -1,18 +1,14 @@
-<!-- =============================
- HTML TEMPLATE FOR NEXTGEN TRUE LIGHT EDUCATION CENTER
- ============================= -->
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+  <!-- META -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>NextGen True Light Education Center</title>
 
-  <!-- Google Fonts -->
+  <!-- FONTES -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Google Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- CSS -->
@@ -20,163 +16,136 @@
 </head>
 <body>
 
-<!-- =============================
- HEADER / NAVBAR
- ============================= -->
+<!-- =================================================
+ HEADER + NAV (DESKTOP) / BURGER (MOBILE)
+================================================= -->
 <header class="header">
-  
 
+  <!-- LOGO (pode adicionar imagem depois) -->
+  <div class="logo">
+    <h3>NextGen</h3>
+  </div>
+
+  <!-- MENU -->
   <nav class="nav" id="navMenu">
-    <a href="#sobre">Sobre Nós</a>
-    <a href="#servicos">O Que Oferecemos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
     <a href="#disciplinas">Disciplinas</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <!-- Hamburger Menu -->
+  <!-- ICON BURGER (aparece só no mobile) -->
   <span class="material-icons menu-icon" onclick="toggleMenu()">menu</span>
 </header>
 
-<!-- =============================
+<!-- =================================================
  BANNER / SLIDER
- ============================= -->
+ LINKS E MENU FICAM SOBRE O BANNER NO MOBILE
+================================================= -->
 <section class="slider">
-  <img src="images/banner1.jpg" class="slide active">
-  <img src="images/banner2.jpg" class="slide">
-  <img src="images/banner3.jpg" class="slide">
+
+  <!-- OVERLAY PARA TEXTO -->
+  <div class="slider-overlay">
+
+    <h1>Educação com Propósito</h1>
+    <p>Formando alunos preparados para o futuro</p>
+
+    <!-- LINKS NO BANNER -->
+    <div class="banner-links">
+      <a href="#servicos">O que oferecemos</a>
+      <a href="#contacto" class="outline">Contactar</a>
+    </div>
+
+  </div>
+
+  <!-- IMAGENS (mantive os nomes) -->
+  <img src="images/banner1.jpg" class="slide active" alt="Banner educativo">
+  <img src="images/banner2.jpg" class="slide" alt="Ambiente escolar">
+  <img src="images/banner3.jpg" class="slide" alt="Estudo e aprendizagem">
 </section>
 
-<!-- =============================
- BOAS-VINDAS (SOMENTE TEXTO)
- ============================= -->
+<!-- =================================================
+ BOAS-VINDAS - TEXTO
+================================================= -->
 <section class="welcome-text-only" id="sobre">
   <h1>Bem-vindo à NextGen True Light</h1>
   <p>
-    Preparamos a próxima geração de crianças, adolescentes e jovens para
-    estudar com autonomia, compreender a matéria e desenvolver a capacidade
-    de pesquisa e pensamento crítico.
+    Preparamos crianças, adolescentes e jovens para estudar com autonomia,
+    pensamento crítico e excelência académica.
   </p>
 </section>
 
-<!-- =============================
- Quem somos 
- ============================= -->
-<section class="welcome" id="sobre">
+<!-- =================================================
+ QUEM SOMOS
+================================================= -->
+<section class="welcome">
   <div class="welcome-text">
-    <h1>Quem Somos?</h1>
+    <h2>Quem Somos?</h2>
     <p>
-      Somos o Centro de Explicações e de Estudo que transforma alunos em excelentes alunos, ajudando-os a obter melhores resultados. Com larga experiência na educação, a começar pela gerência, promovemos o saber e o conhecimento.
+      Somos um centro de explicações focado em resultados, disciplina,
+      acompanhamento personalizado e métodos modernos de ensino.
     </p>
   </div>
+
+  <!-- SLIDER DE IMAGENS -->
   <div class="welcome-image">
-  <img src="images/child.png" class="welcome-slide active" alt="Aluno com mochila">
-  <img src="images/child2.png" class="welcome-slide" alt="Aluno estudando">
-  <img src="images/child3.png" class="welcome-slide" alt="Criança com livros">
-  <img src="images/child4.png" class="welcome-slide" alt="Aluno pesquisando">
-</div>
+    <img src="images/child.png" class="welcome-slide active" alt="Aluno">
+    <img src="images/child2.png" class="welcome-slide" alt="Estudando">
+    <img src="images/child3.png" class="welcome-slide" alt="Livros">
+    <img src="images/child4.png" class="welcome-slide" alt="Pesquisa">
+  </div>
 </section>
 
-<!-- =============================
- O QUE OFERECEMOS
- ============================= -->
+<!-- =================================================
+ SERVIÇOS
+================================================= -->
 <section class="offerings" id="servicos">
   <h2>O Que Oferecemos</h2>
   <p class="offerings-subtitle">
-    No NextGen True Light Education Center, ajudamos os alunos a alcançar
-    excelência académica com métodos modernos e acompanhamento dedicado.
+    Métodos eficazes, acompanhamento contínuo e foco no sucesso do aluno.
   </p>
 
   <div class="offerings-grid">
 
+    <!-- CARD -->
     <div class="offering-card">
       <span class="material-icons">school</span>
-      <h3>Apoio Escolar Completo</h3>
-      <p>Explicações claras e acompanhamento contínuo em várias disciplinas.</p>
+      <h3>Apoio Escolar</h3>
+      <p>Explicações completas em várias disciplinas.</p>
     </div>
 
     <div class="offering-card">
       <span class="material-icons">groups</span>
-      <h3>Aulas Individuais e em Grupo</h3>
-      <p>Ensino adaptado às necessidades de cada aluno.</p>
-    </div>
-
-    <div class="offering-card">
-      <span class="material-icons">menu_book</span>
-      <h3>Métodos de Estudo</h3>
-      <p>Ensinamos técnicas para estudar melhor, memorizar e compreender.</p>
+      <h3>Aulas em Grupo</h3>
+      <p>Aprendizagem colaborativa e orientada.</p>
     </div>
 
     <div class="offering-card">
       <span class="material-icons">psychology</span>
-      <h3>Desenvolvimento do Pensamento</h3>
-      <p>Estimulamos o raciocínio lógico e o pensamento crítico.</p>
-    </div>
-
-    <div class="offering-card">
-      <span class="material-icons">edit_note</span>
-      <h3>Preparação para Testes e Exames</h3>
-      <p>Treino focado para avaliações, exames e admissões.</p>
-    </div>
-
-    <div class="offering-card">
-      <span class="material-icons">wifi</span>
-      <h3>Aulas Presenciais e Online</h3>
-      <p>Flexibilidade para aprender no centro ou à distância.</p>
+      <h3>Pensamento Crítico</h3>
+      <p>Desenvolvimento intelectual e lógico.</p>
     </div>
 
   </div>
 </section>
 
-
-<!-- =============================
- DISCIPLINAS
- ============================= -->
-<section class="subjects" id="disciplinas">
-  <h2>Disciplinas</h2>
-
-  <!-- Ensino Primário -->
-  <h3>Ensino Primário (1ª - 6ª Classe)</h3>
-  <div class="subjects-grid" id="primary">
-    <div class="subject"><img src="images/portugues.png"><p>Português</p></div>
-    <div class="subject"><img src="images/matematica.png"><p>Matemática</p></div>
-    <div class="subject"><img src="images/ciencias.png"><p>Ciências</p></div>
-  </div>
-  <button onclick="showMore()" id="moreBtn">Ver mais disciplinas</button>
-
-  <!-- Secundário -->
-  <h3>Ensino Secundário</h3>
-  <div class="subjects-grid">
-    <div class="subject"><img src="images/matematica.png"><p>Matemática</p></div>
-    <div class="subject"><img src="images/fisica.png"><p>Física</p></div>
-    <div class="subject"><img src="images/quimica.png"><p>Química</p></div>
-  </div>
-
-  <!-- Exames -->
-  <h3>Exames de Admissão</h3>
-  <div class="subjects-grid">
-    <div class="subject"><img src="images/matematica.png"><p>Matemática</p></div>
-    <div class="subject"><img src="images/fisica.png"><p>Física</p></div>
-  </div>
-</section>
-
-<!-- =============================
+<!-- =================================================
  CONTACTOS
- ============================= -->
+================================================= -->
 <section class="contact" id="contacto">
-  <h2>Mais Informações</h2>
+  <h2>Contacto</h2>
+
   <div class="contact-box">
     <p><span class="material-icons">call</span> +258 8XX XXX XXX</p>
     <p><span class="material-icons">email</span> contacto@ngtlec.com</p>
-    <a href="https://wa.me/258XXXXXXXX" target="_blank" class="whatsapp">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+
+    <a href="https://wa.me/258XXXXXXXX" class="whatsapp" target="_blank">
+      <img src="images/whatsapp.png" alt="WhatsApp">
       Falar no WhatsApp
     </a>
   </div>
 </section>
 
-<!-- =============================
- FOOTER
- ============================= -->
 <footer>
   © 2026 NextGen True Light Education Center
 </footer>
